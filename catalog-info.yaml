@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: i9sw99haw-go-gitops
+  description: This is GitOps manifest for i9sw99haw-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=i9sw99haw-go
+    backstage.io/kubernetes-id: i9sw99haw-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: i9sw99haw-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:i9sw99haw-go
